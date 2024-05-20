@@ -90,6 +90,13 @@
         </div>
 
         <div class="frames">
+
+
+          <div class="frame" data-url="https://sites.google.com/view/chemical4ai/" data-target="_blank">
+            <h2>人工智能大數據化學智財競賽</h2>
+            <p>使用 <b>Google Sites</b> 與<b>邱英澤</b>共同製作。<br>(https://sites.google.com/view/chemical4ai/)</p>
+          </div>
+
           <div class="frame" data-url="examples/RustToAsciiArt/index.html">
             <h2>Rust 轉 Ascii 藝術</h2>
             <p>使用 Rust 和 FFmpeg 將影片轉成 文字藝術檔案</p>
@@ -112,7 +119,12 @@
           frames.forEach((frame) => {
             frame.addEventListener("click", () => {
               const url = frame.getAttribute("data-url")
-              frame.innerHTML = `<iframe src="${url}"></iframe><a href="${url}" class="fullscreen"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-fullscreen" viewBox="0 0 16 16"><path d="M1.5 1a.5.5 0 0 0-.5.5v4a.5.5 0 0 1-1 0v-4A1.5 1.5 0 0 1 1.5 0h4a.5.5 0 0 1 0 1zM10 .5a.5.5 0 0 1 .5-.5h4A1.5 1.5 0 0 1 16 1.5v4a.5.5 0 0 1-1 0v-4a.5.5 0 0 0-.5-.5h-4a.5.5 0 0 1-.5-.5M.5 10a.5.5 0 0 1 .5.5v4a.5.5 0 0 0 .5.5h4a.5.5 0 0 1 0 1h-4A1.5 1.5 0 0 1 0 14.5v-4a.5.5 0 0 1 .5-.5m15 0a.5.5 0 0 1 .5.5v4a1.5 1.5 0 0 1-1.5 1.5h-4a.5.5 0 0 1 0-1h4a.5.5 0 0 0 .5-.5v-4a.5.5 0 0 1 .5-.5"/></svg></a>`
+              const target = frame.getAttribute("data-target")
+              if (target === "_blank") {
+                window.open(url, target)
+              } else {
+                frame.innerHTML = `<iframe src="${url}"></iframe><a href="${url}" class="fullscreen"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-fullscreen" viewBox="0 0 16 16"><path d="M1.5 1a.5.5 0 0 0-.5.5v4a.5.5 0 0 1-1 0v-4A1.5 1.5 0 0 1 1.5 0h4a.5.5 0 0 1 0 1zM10 .5a.5.5 0 0 1 .5-.5h4A1.5 1.5 0 0 1 16 1.5v4a.5.5 0 0 1-1 0v-4a.5.5 0 0 0-.5-.5h-4a.5.5 0 0 1-.5-.5M.5 10a.5.5 0 0 1 .5.5v4a.5.5 0 0 0 .5.5h4a.5.5 0 0 1 0 1h-4A1.5 1.5 0 0 1 0 14.5v-4a.5.5 0 0 1 .5-.5m15 0a.5.5 0 0 1 .5.5v4a1.5 1.5 0 0 1-1.5 1.5h-4a.5.5 0 0 1 0-1h4a.5.5 0 0 0 .5-.5v-4a.5.5 0 0 1 .5-.5"/></svg></a>`
+              }
             })
           })
         </script>
