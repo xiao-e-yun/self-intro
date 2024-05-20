@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+    //圖片集資料
+    //data: [url: string, size: [width: number, height: number]]
+    const data = JSON.parse(`[
+      ["https://i.pinimg.com/236x/c5/5e/f5/c55ef523033bd6d42b496cd23d24a450.jpg",[236,310]],
+      ["https://i.pinimg.com/236x/4d/6c/a6/4d6ca615fd2cd97ad57259864d6bd10b.jpg",[236,236]],
+      ["https://i.pinimg.com/236x/de/aa/65/deaa65101dbba62b6d93f597fc0f4c27.jpg",[236,236]],
+      ["https://i.pinimg.com/236x/85/a1/9f/85a19f687fb8183c22f442150a08571a.jpg",[236,328]],
+      ["https://i.pinimg.com/736x/05/2d/97/052d97bb3541e12c1da85d94c61f1e2b.jpg",[735,725]],
+      ["https://i.pinimg.com/736x/ff/13/8b/ff138bae35543affe47e39689d66783d.jpg",[736,736]],
+      ["https://i.pinimg.com/236x/14/d5/dd/14d5dd0a72ed7d480fe415bc373c64c4.jpg",[236,227]],
+      ["https://i.pinimg.com/236x/51/ae/78/51ae78acfeb057a8e1c6706e32f8bb94.jpg",[236,419]],
+      ["https://i.pinimg.com/236x/85/89/16/85891693df7624072e80f96330262e6a.jpg",[236,249]],
+      ["https://i.pinimg.com/236x/00/e8/f5/00e8f5efd8c30e0d6bd5c98b96508f38.jpg",[236,236]],
+      ["https://i.pinimg.com/736x/cc/d8/50/ccd850f18d6454576c5be0ca890386fe.jpg",[735,738]],
+      ["https://i.pinimg.com/236x/86/19/94/861994b16b0a7e6a58b39f41b82d8e5f.jpg",[235,252]],
+      ["https://i.pinimg.com/236x/91/47/bc/9147bc1869918da35539ac37460795f5.jpg",[236,236]],
+      ["https://i.pinimg.com/236x/23/9c/3a/239c3a09754dde3843e51dbc506b4bec.jpg",[236,419]],
+      ["https://i.pinimg.com/236x/78/af/f8/78aff8f4c414c13148b76e6d1178023d.jpg",[236,419]],
+      ["https://i.pinimg.com/236x/6f/85/a2/6f85a27cf9466381d4aa753da4d5c237.jpg",[235,235]],
+      ["https://i.pinimg.com/236x/73/ed/62/73ed622ec6c3be9da42ae81926ee4038.jpg",[236,236]],
+      ["https://i.pinimg.com/236x/8a/76/df/8a76dfe6d1805c6dcea0c4ec7f98ec4a.jpg",[236,472]],
+      ["https://i.pinimg.com/236x/67/d6/9c/67d69cf8e2f2ed12bf356ac27e454934.jpg",[236,370]],
+      ["https://i.pinimg.com/236x/f1/1f/2c/f11f2cbd21d11b33c9e70b7422ea6537.jpg",[236,236]],
+      ["https://i.pinimg.com/236x/5b/b1/d2/5bb1d223e7a8a07234f152ad97ca01b9.jpg",[236,419]],
+      ["https://i.pinimg.com/236x/3a/1c/30/3a1c305d7811b8af2bf19c57dd187f72.jpg",[236,236]],
+      ["https://i.pinimg.com/236x/aa/8a/b6/aa8ab61531658b00ca9711396c3a1ae5.jpg",[236,333]],
+      ["https://i.pinimg.com/236x/6c/2d/42/6c2d42396689c0569cdc2a4f08d090aa.jpg",[236,511]],
+      ["https://i.pinimg.com/236x/59/35/fa/5935fa410356abb8814e9842b2a6c92f.jpg",[236,428]],
+      ["https://i.pinimg.com/236x/70/3c/4e/703c4e64f606d685fca9506fee54bdd2.jpg",[236,354]],
+      ["https://i.pinimg.com/236x/f4/12/6c/f4126c6038783d74500b28e49bb98a02.jpg",[236,236]],
+      ["https://i.pinimg.com/236x/f2/fa/6e/f2fa6edd1cbe5e905f946d97d95d3d5f.jpg",[236,236]],
+      ["https://i.pinimg.com/236x/43/ff/1d/43ff1d2328688a6db02f60f92fc8b3e3.jpg",[236,357]],
+      ["https://i.pinimg.com/236x/5b/e8/6e/5be86e47947f8060fb13a31bc13d0ec9.jpg",[236,427]]
+    ]`)
+  </script>
+
+  <!--瀑布流示範-->
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    #main {
+      gap: 10px;
+      padding: 10px;
+      display: flex;
+      overflow: overlay;
+      background: #333;
+      justify-content: center;
+
+      width: 100%;
+      min-height: 100vh;
+    }
+
+    #main div {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    #main img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  </style>
+  <main id="main"></main>
+  <script>
+    const main = document.getElementById('main');
+    const MaxColWidth = 300; 
+    const padding = 10;
+    
+    class Waterfall {
+      update() {
+        const colCount = Math.floor(window.innerWidth / MaxColWidth);
+        const cols = Array(colCount).fill(undefined).map(_=>document.createElement('div'));
+        const colHeights = Array(colCount).fill(0);
+
+        for (const [url, [width, height]] of data) {
+          const colIndex = colHeights.indexOf(Math.min(...colHeights));
+          const img = document.createElement('img');
+          img.src = url;
+          img.style.aspectRatio = `${width}/${height}`;
+          cols[colIndex].appendChild(img);
+          colHeights[colIndex] += height / width * MaxColWidth + padding;
+        }
+
+        main.innerHTML = '';
+        for (const el of cols) {
+          main.appendChild(el);
+        }
+
+      }
+
+    }
+
+    const waterfall = new Waterfall();
+    waterfall.update();
+    window.addEventListener('resize', waterfall.update);
+
+  </script>
+</body>
+</html>

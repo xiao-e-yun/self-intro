@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>張瑞賢的自我介紹</title>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="title">
+          <h1 class="name">張瑞賢<small>自我介紹</small></h1>
+          <div class="desc">
+            GitHub: <a href="https://github.com/xiao-e-yun">xiao-e-yun</a><br>
+            Email: <a href="mailto:a0970323059@gmail.com">a0970323059@gmail.com</a><br>
+            Phone: <a href="tel:0970323059">0970-323-059</a>
+          </div>
+        </div>
+        <img src="avatar.jpg" />
+      </div>
+    </header>
+    <main>
+      <div>
+        <div>
+          <h2>掌握程式語言</h2>
+          <ul>
+            <li>HTML,CSS,JS</li>
+            <li>TypeScript</li>
+            <li>Rust</li>
+            <li>Vue</li>
+            <li>Python</li>
+            <li>SQL</li>
+            <li>Shell (Cmd, Bash)</li>
+            <li>Markdown</li>
+            <li>Arduino</li>
+            <li>C#</li>
+            <li>Php</li>
+          </ul>
+        </div>
+        <div>
+          <h2>掌握技術</h2>
+          <ul>
+            <li>自動化</li>
+            <li>網頁爬蟲</li>
+            <li>資訊收集</li>
+            <li>Office 使用</li>
+            <li>Gimp 圖片軟體應用</li>
+            <li>Blender 3D動畫製作</li>
+            <li>AI輔助功能 (Copilot, ChatGPT)</li>
+            <li>
+              <h3>電腦相關</h3>
+              <ul>
+                <li>電腦組裝、維護</li>
+                <li>低代碼編輯 (Wix, Google Site)應用</li>
+                <li>Linux 安裝、使用及維護 (包含 ArchLinux)</li>
+                <li>Systemctl, pm2 管理程序</li>
+                <li>Npm, Cargo 包管理器</li>
+                <li>Windows 安裝、維護</li>
+                <li>Git 版本控制</li>
+                <li>網路管理器路由操作</li>
+                <li>命令行應用程式使用</li>
+                <li>Samba 遠端硬碟部屬</li>
+                <li>Unity 應用</li>
+                <li>Docker 應用</li>
+                <li>Vim 應用</li>
+                <li>win-api應用</li>
+              </ul>
+            </li>
+            <li>
+              <h3>網頁相關</h3>
+              <ul>
+                <li>前端 (Html5, Vue)、後端 (NodeJs, Php, Rust)維護、撰寫</li>
+                <li>單頁式應用程式、伺服器渲染 (SPA & SSR)</li>
+                <li>Cloudflare 操作</li>
+                <li>PWA, HTML5, AJAX</li>
+                <li>SQL 部屬、操作</li>
+                <li>RESTful API、HTTP相關技術</li>
+                <li>SASS (SCSS) 編寫</li>
+                <li>基於Web-UI的Rust的軟體製作</li>
+                <li>Vite、Webpack等，網頁打包器應用</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <div>
+          <h2>作品集</h2>
+          <a href="https://github.com/xiao-e-yun">更多作品<small>(GitHub)</small></a>
+        </div>
+
+        <div class="frames">
+          <div class="frame" data-url="examples/RustToAsciiArt/index.html">
+            <h2>Rust 轉 Ascii 藝術</h2>
+            <p>使用 Rust 和 FFmpeg 將影片轉成 文字藝術檔案</p>
+          </div>
+          
+          <div class="frame" data-url="examples/Masonry/index.html">
+            <h2>瀑布流</h2>
+            <p>實現簡易的瀑布流特效</p>
+          </div>
+
+          <div class="frame" data-url="examples/Normal/index.html">
+            <h2>簡易網站</h2>
+            <p>常見功能練習</p>
+          </div>
+        </div>
+
+        <script>
+          const frames = document.querySelectorAll(".frame")
+          //click then replace to iframe
+          frames.forEach((frame) => {
+            frame.addEventListener("click", () => {
+              const url = frame.getAttribute("data-url")
+              frame.innerHTML = `<iframe src="${url}"></iframe><a href="${url}" class="fullscreen"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-fullscreen" viewBox="0 0 16 16"><path d="M1.5 1a.5.5 0 0 0-.5.5v4a.5.5 0 0 1-1 0v-4A1.5 1.5 0 0 1 1.5 0h4a.5.5 0 0 1 0 1zM10 .5a.5.5 0 0 1 .5-.5h4A1.5 1.5 0 0 1 16 1.5v4a.5.5 0 0 1-1 0v-4a.5.5 0 0 0-.5-.5h-4a.5.5 0 0 1-.5-.5M.5 10a.5.5 0 0 1 .5.5v4a.5.5 0 0 0 .5.5h4a.5.5 0 0 1 0 1h-4A1.5 1.5 0 0 1 0 14.5v-4a.5.5 0 0 1 .5-.5m15 0a.5.5 0 0 1 .5.5v4a1.5 1.5 0 0 1-1.5 1.5h-4a.5.5 0 0 1 0-1h4a.5.5 0 0 0 .5-.5v-4a.5.5 0 0 1 .5-.5"/></svg></a>`
+            })
+          })
+        </script>
+      </div>
+    </main>
+    <footer>
+      <p>本簡歷使用 HTML5 撰寫，並使用 Git 部屬至 GitHub Page 上。</p>
+    </footer>
+  </body>
+  <style>
+    :root {
+      --primary: #FFF8EA;
+      --secondary: #815B5B;
+      --background: #594545;
+    }
+
+    * {
+      box-sizing: border-box;
+      color: var(--primary);
+    }
+
+    h1, h2, h3 {
+      background: var(--secondary);
+      padding-left: .2em;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: var(--background);
+    }
+
+    header {
+      background: var(--secondary);
+      padding: 1em 0;
+    }
+
+    header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      @media (max-width: 600px) {
+        flex-direction: column;
+      }
+    }
+
+    header .title {
+      display: flex;
+      flex-direction: column;
+      @media (max-width: 600px) {
+        width: 100%;
+      }
+    }
+
+    header .desc {
+      padding: 0 1em;
+      margin: 0;
+    }
+
+    .name, .name small {
+      background: var(--background);
+      padding: .2em .4em;
+      margin: .2em 0;
+    }
+    
+    header img {
+      background: var(--background);
+      margin: 1em;
+      max-width: 12em;
+      height: 12em;
+    }
+
+    header small {
+      font-size: 0.8em;
+    }
+
+    main {
+      padding: 1em;
+      max-width: 1024px;
+      margin: auto;
+    }
+
+    .frames {
+      width: 100%;
+      display: grid;
+      gap: 1em;
+      grid-template-columns: repeat(auto-fill, minmax(18em, 1fr));
+    }
+
+    .frame {
+      width: 100%;
+      background: var(--secondary);
+      aspect-ratio: 4 / 3;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .frame p {
+      padding: 0 .4em;
+    }
+
+    .frame iframe {
+      /* run on two resolution */
+      width: 200%;
+      height: 200%;
+      border: none;
+      transform: scale(0.5) translate(-50%, -50%);
+    }
+
+    .frame .fullscreen {
+      position: absolute;
+      bottom: 0;
+      left: .2em;
+      font-size: .6em;
+      padding: .4em;
+    }
+
+    footer {
+      position: sticky;
+      bottom: 0;
+      width: 100%;
+      background: var(--secondary);
+      padding: 0.2em 1em;
+    }
+    
+
+  </style>
+</html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    /*Global*/
+    * {
+      /*Define Font*/
+      font-family:Arial, Helvetica, sans-serif;
+    }
+    
+    body {
+      /*Avoid wrong margin*/
+      margin: 0;
+      /*Define Background*/
+      background: #666;
+    }
+    
+    header, footer {
+      /*Set Header and Footer position as Fixed*/
+      position: fixed;
+
+      
+      /*Decorate*/
+      display: block;
+      background: #333;
+      border-radius: .5em;
+    }
+    
+    header a, footer button {
+      /*Decorate*/
+      color: #ccc;
+      padding: .6em;
+      display: block;
+      font-weight: bold;
+      text-decoration: none;
+
+      /*For Button*/
+      border: none;
+      cursor: pointer;
+      background: transparent;
+    }
+    
+    address {
+      /*Set Address work as span*/
+      display: contents;
+    }
+    
+    img {
+      /* https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit */
+      object-fit: cover;
+      /* Avoid overflow */
+      max-width: 100%;
+    }
+  </style>
+
+</head>
+<body>
+
+  <style>
+    header {
+      /*Position*/
+      top: 1em;
+      left: 1em;
+
+    }
+  </style>
+
+  <header>
+    <!-- "#ID" is go to id="ID", do nothing if href="#"-->
+    <a href="#">Back to Home</a>
+  </header>
+  
+
+  <style>
+  /*Define middle layout */
+  .layout {
+    width: max(80vw,600px);
+    margin: auto;
+  }
+  </style>
+  <div class="layout">
+    
+    <style>
+    /*Define title */
+    .title {
+      /*Center Text */
+      display: flex;
+      justify-content: center;
+      
+      /*Fixed Height for 10 text width */
+      height: 10em;
+
+      /*Decorate*/
+      color: skyblue;
+      background: steelblue;
+      border: 4px solid skyblue;
+    }
+    
+    .title > h1 {
+      /*Center Text */
+      margin: auto;
+    }
+    </style>
+    <div class="title">
+      <h1>Title</h1>
+    </div>
+    <!--
+      It is better that
+      <h1>title</h1>
+    -->
+
+
+    <style>
+    main {
+      /*Decorate*/
+      color: #ccc;
+      background: #333;
+      border: solid #ccc;
+      border-width: 0 4px;
+      padding: 1em 2em;
+    }
+    </style>
+    <main>
+
+      <style>
+      /*Decorate*/
+      .info {
+        font-weight: bold;
+      }
+      </style>
+      <div class="info">
+        <span>Date: <time>Unknow</time></span>
+        <span>Author: <address>Unknow</address></span>
+        <script>
+        // get time tag, and set element inner to `current date`
+        // about toLocaleDateString ( https://stackoverflow.com/a/35951045/15859431 )
+        document.querySelector("time").innerText = new Date().toLocaleDateString()
+        </script>
+      </div>
+      
+      <p>
+        JavaScript (/ˈdʒɑːvəskrɪpt/), often abbreviated as JS, is a programming language and core technology of the Web, alongside HTML and CSS. 99% of websites use JavaScript on the client side for webpage behavior.
+      </p>
+
+      <style>
+      .image {
+        /* Set width as 80% or 720px which is min */
+        width:min(80%,720px);
+
+        /*Decorate*/
+        background: #ccc;
+        color: #333;
+        padding: .4em;
+        margin: auto;
+        
+      }
+      </style>
+      <div class="image">
+        <img src="https://i.pinimg.com/736x/28/5b/2f/285b2ff4116fdb4301e27f8bd0b03225.jpg">
+        <span>Image Detail</span>
+      </div>
+
+      <p>
+        Web browsers have a dedicated JavaScript engine that executes the client code. These engines are also utilized in some servers and a variety of apps. The most popular runtime system for non-browser usage is Node.js.
+      </p>
+
+      <style>
+        .group {
+          /* Set width as 80% or 720px which is min */
+          width: min(80%,720px);
+          
+          /*
+          Layout the picture into
+          [ ] [ ]
+          [ ] [ ]
+          */
+          display: grid;
+          grid-template:
+          1fr 1fr /
+          1fr 1fr;
+          
+          /*Decorate*/
+          gap: .4em;
+          margin: auto;
+          padding: .4em;
+          background: #ccc;
+        }
+
+        .group > img {
+          /* Auto fit when image width < layout width */
+          width: 100%;
+          /* Assume images is a square */
+          aspect-ratio: 1 / 1;
+        }
+      </style>
+      <div class="group">
+        <img  src="https://i.pinimg.com/564x/0c/32/a2/0c32a2fde2fc4cff81298535b13d850d.jpg">
+        <img  src="https://i.pinimg.com/564x/d6/06/ea/d606eace289e3d7583703c6998838e4b.jpg">
+        <img  src="https://i.pinimg.com/736x/d0/b1/08/d0b108d56984e10d53381ec015d4c58c.jpg">
+        <img  src="https://i.pinimg.com/564x/36/b8/99/36b89994e7132279658660d3e7d67521.jpg">
+      </div>
+
+      <p>
+        JavaScript is a high-level, often just-in-time compiled language that conforms to the ECMAScript standard. It has dynamic typing, prototype-based object-orientation, and first-class functions. It is multi-paradigm, supporting event-driven, functional, and imperative programming styles. It has application programming interfaces (APIs) for working with text, dates, regular expressions, standard data structures, and the Document Object Model (DOM)
+      </p>
+
+      <style>
+      .copyright {
+        /*Decorate*/
+        padding-top: 2em;
+      }
+      </style>
+      <div class="copyright">
+        Copyright © 2024 <address>Unknow</address>.
+        All rights reserved.
+      <div>
+      <script>
+      // get all of address tag, and then set inner to `your name`
+      for (node of document.querySelectorAll("address"))
+        node.innerText = "Xiaoeyun"
+      </script>
+    </main>
+
+  </div>
+
+
+  <style>
+  /*Position*/
+  footer {
+      right: 1em;
+      bottom: 1em;
+    }
+  </style>
+  <footer>
+    <button onclick="window.scrollTo(0,0)">Back to Top</button>
+  </footer>
+
+</body>
+</html>
