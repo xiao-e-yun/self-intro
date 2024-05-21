@@ -21,6 +21,25 @@
     </header>
     <main>
       <div>
+        <h2>簡歷</h2>
+        <p>
+        從國中開始對電腦有興趣，高中時學習網頁，通過網路自學各種技能，對許多領域皆有涉獵，常見辦公需求也沒問題，但還是著重在網頁設計，曾使用網頁製作遊戲，也會使用Library、研究底層原理。<br>
+        </p>
+      </div>
+      <div>
+        <h2>學經歷</h2>
+        <div class="card">
+          <h3>學歷</h3>
+          <ul><li>雲林科技大學-營建工程系</li></ul>
+        </div>
+        <div class="card">
+          <h3>經歷</h3>
+          <ul>
+            <li>人工智能大數據化學智財競賽-網頁管理</li>
+          </ul>
+        </div>
+      </div>
+      <div>
         <div>
           <h2>掌握程式語言</h2>
           <ul>
@@ -57,7 +76,7 @@
                 <li>Npm, Cargo 包管理器</li>
                 <li>Windows 安裝、維護</li>
                 <li>Git 版本控制</li>
-                <li>網路管理器路由操作</li>
+                <li>路由器操作</li>
                 <li>命令行應用程式使用</li>
                 <li>Samba 遠端硬碟部屬</li>
                 <li>Unity 應用</li>
@@ -72,7 +91,7 @@
                 <li>前端 (Html5, Vue)、後端 (NodeJs, Php, Rust)維護、撰寫</li>
                 <li>單頁式應用程式、伺服器渲染 (SPA & SSR)</li>
                 <li>Cloudflare 操作</li>
-                <li>PWA, HTML5, AJAX</li>
+                <li>PWA, HTML5, AJAX, JQuery</li>
                 <li>SQL 部屬、操作</li>
                 <li>RESTful API、HTTP相關技術</li>
                 <li>SASS (SCSS) 編寫</li>
@@ -86,7 +105,7 @@
       <div>
         <div>
           <h2>作品集</h2>
-          <a href="https://github.com/xiao-e-yun">更多作品<small>(GitHub)</small></a>
+          <a href="https://github.com/xiao-e-yun">更多作品<small>(GitHub)</small></a>，點擊顯示預覽。
         </div>
 
         <div class="frames">
@@ -94,7 +113,12 @@
 
           <div class="frame" data-url="https://sites.google.com/view/chemical4ai/" data-target="_blank">
             <h2>人工智能大數據化學智財競賽</h2>
-            <p>使用 <b>Google Sites</b> 與<b>邱英澤</b>共同製作。<br>(https://sites.google.com/view/chemical4ai/)</p>
+           <p>使用 <b>Google Sites</b> 與<b>邱英澤</b>共同製作。<br>(跳轉至 https://sites.google.com/view/chemical4ai/)</p>
+          </div>
+
+          <div class="frame" data-url="examples/Game/index.html">
+            <h2>網頁遊戲</h2>
+            <p>搭配 WASM 製作，<br>WASD移動，QER技能，ESC暫停。</p>
           </div>
 
           <div class="frame" data-url="examples/RustToAsciiArt/index.html">
@@ -102,14 +126,19 @@
             <p>使用 Rust 和 FFmpeg 將影片轉成 文字藝術檔案</p>
           </div>
           
+          <div class="frame" data-url="examples/Any2DataURL/index.html">
+            <h2> 檔案轉資料網址</h2>
+            <p>將檔案轉成可內嵌至網頁的格式</p>
+          </div>
+
           <div class="frame" data-url="examples/Masonry/index.html">
             <h2>瀑布流</h2>
             <p>實現簡易的瀑布流特效</p>
           </div>
 
           <div class="frame" data-url="examples/Normal/index.html">
-            <h2>簡易網站</h2>
-            <p>常見功能練習</p>
+            <h2>練習網站</h2>
+            <p>實踐常見功能</p>
           </div>
         </div>
 
@@ -177,7 +206,8 @@
       display: flex;
       flex-direction: column;
       @media (max-width: 600px) {
-        width: 100%;
+        width: calc(100% - 2em);
+	      margin-right: 2em;
       }
     }
 
@@ -208,6 +238,14 @@
       max-width: 1024px;
       margin: auto;
     }
+
+    .card {
+      margin: 0.5em 0 0 1em;
+      background: var(--secondary);
+      padding: 0 0.4em 0.2em;
+    }
+
+
 
     .frames {
       width: 100%;
